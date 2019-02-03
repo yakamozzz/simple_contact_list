@@ -1,0 +1,14 @@
+
+
+<a href="/contacts/new"> add more </a>
+
+
+
+<ul>
+	<% @contacts.each do |contact| %>
+	<li> 
+		<%= contact.name %> <a href="/contacts/:id/edit" >edit</a>      #how to connect to id??
+		</li>
+		<% end %>
+	</ul>
+
