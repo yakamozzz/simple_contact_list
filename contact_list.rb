@@ -23,6 +23,7 @@ end
 
 
 get '/contacts/:id/edit' do
+	@contact= Contact.find(params[:id])
 	erb :contact_edit
 end
 
@@ -30,4 +31,4 @@ end
 put '/contacts/:id' do
 	Contact.update(name: params[:name])
 	erb :contacts
-	end
+end

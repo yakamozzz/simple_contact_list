@@ -7,7 +7,7 @@
 <ul>
 	<% @contacts.each do |contact| %>
 	<li> 
-		<%= contact.name %> <a href="/contacts/:id/edit" >edit</a>      #how to connect to id??
+		<%= contact.name %> <a href="/contacts/<%= contact.id %>/edit" >edit</a>   
 		</li>
 		<% end %>
 	</ul>
