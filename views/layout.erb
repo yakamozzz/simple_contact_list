@@ -3,3 +3,8 @@
 		<title>Contact List</title>
 	</head>
 		<body><i><%= yield %></body></head></html>
+
+
+			<% if @message %>
+  <p><%= @message %></p>
+<% end %>

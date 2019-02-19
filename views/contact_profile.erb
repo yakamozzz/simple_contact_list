@@ -1,0 +1,17 @@
+
+<h1>This is the profile of <%= @contact.name %> </h1>
+
+
+<form action="/contacts/<%= @contact.id %>/profile" method="PUT">
+  <input type="text" name="numbers">
+  <input type="submit" value="Add a number">
+</form>
+
+
+<ul>
+	
+	<li> 
+		<%= @contact.numbers %> 
+		</li>
+	
+	</ul>

@@ -16,10 +16,40 @@ get '/contacts/new' do
 end
 
 post '/contacts' do
-	Contact.create(name: params[:name])
+	@contact = Contact.new(name: params[:name])
+	if @contact.valid?
+		@contact.save
+	else
+		# unter webapps for beginners, sessions, message
+		# show page: wenn auf name klicken, neue form, telefonnummer hinzufuegen koennen
+
+	end
+	
+	
 	redirect "/contacts"
+end
+
+
+
+get '/contacts/:id/profile' do    
+	@contact= Contact.find(params[:id])
+	@contacts = Contact.all
+	@number = Numbers.new(number: params[:number]) #???
+	erb :contact_profile
+	end
+
+put '/contacts/:id/profile' do
+	@contact= Contact.find(params[:id])
+	@number = @contact.numbers.create   #???
+
+	redirect "/contacts/:id/profile"
 
 end
+
+
+
+
+
 
 
 get '/contacts/:id/edit' do
@@ -29,6 +59,27 @@ end
 
 
 put '/contacts/:id' do
-	Contact.update(name: params[:name])
-	erb :contacts
+	@contact= Contact.find(params[:id])
+	@contact.update(name: params[:name])
+	redirect "/contacts"
 end
+
+
+get '/contacts/:id/delete' do
+	@contact= Contact.find(params[:id])
+	
+	erb :contact_delete
+end
+
+
+delete '/contacts/:id/delete' do
+	@contact= Contact.find(params[:id])
+	@contact.destroy
+	redirect '/contacts'
+end
+
+
+
+
+
+

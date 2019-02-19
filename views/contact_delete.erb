@@ -1,0 +1,6 @@
+
+<form action="/contacts/<%= @contact.id %>/delete" method="POST">
+	<input type='hidden' name='_method' value='delete'>
+  delete? <%= @contact.name %>
+  <input type="submit" value='yes, delete'>
+</form>

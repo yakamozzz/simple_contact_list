@@ -1,6 +1,7 @@
 please edit the contact and click 'save changes'
 
-<form action="/contacts/<%= contact.id %>" method="PUT">
-  name: <input value=<%= contact.name %> type="text" name="name">
+<form action="/contacts/<%= @contact.id %>" method="POST">
+	<input type='hidden' name='_method' value='put'>
+  name: <input value=<%= @contact.name %> type="text" name="name">
   <input type="submit" value='save changes'>
 </form>

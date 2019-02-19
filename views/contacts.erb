@@ -7,7 +7,7 @@
 <ul>
 	<% @contacts.each do |contact| %>
 	<li> 
-		<%= contact.name %> <a href="/contacts/<%= contact.id %>/edit" >edit</a>   
+		<%= contact.name %> <a href="/contacts/<%= contact.id %>/edit" >edit</a>   <a href="/contacts/<%= contact.id %>/delete" >delete</a> <a href="/contacts/<%= contact.id %>/profile" >profile</a> 
 		</li>
 		<% end %>
 	</ul>
