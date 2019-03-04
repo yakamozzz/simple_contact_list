@@ -9,9 +9,6 @@ class Contact < ApplicationRecord
 
 end
 
-class Numbers < ApplicationRecord
-  belongs_to :contact
-end
 
 
 

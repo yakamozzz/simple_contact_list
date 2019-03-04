@@ -2,16 +2,19 @@
 <h1>This is the profile of <%= @contact.name %> </h1>
 
 
-<form action="/contacts/<%= @contact.id %>/profile" method="PUT">
+<form action="/contacts/<%= @contact.id %>/profile" method="POST">
   <input type="text" name="numbers">
   <input type="submit" value="Add a number">
 </form>
-
+ 
+ 
 
 <ul>
-	
-	<li> 
-		<%= @contact.numbers %> 
-		</li>
-	
-	</ul>
+  
+     <% @contact.numbers.each do |number| %>
+    <li>
+      <a href="/contacts/<%= @contact.id %>"> <%= number.number %> </a>
+     
+    </li>
+  <% end %>
+</ul>
